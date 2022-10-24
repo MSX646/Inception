@@ -17,9 +17,9 @@
  *
  * @package WordPress
  */
-define('DB_NAME', getenv('DB_NAME'));
-define('DB_USER', getenv('DB_USER'));
-define('DB_PASSWORD', getenv('DB_PASS'));
+define('DB_NAME', 'wordpress');
+define('DB_USER', 'kezekiel');
+define('DB_PASSWORD', 'strong');
 define( 'DB_HOST', 'mariadb' );
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );

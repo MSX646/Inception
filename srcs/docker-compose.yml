@@ -56,3 +56,15 @@ services:
     restart: always
     stdin_open: true 
     tty: true
+  adminer:
+    build: ./requirements/adminer
+    container_name: adminer
+    depends_on:
+      - mariadb
+    ports:
+      - "4242:4242"
+    networks:
+     - app
+    restart: always
+    stdin_open: true 
+    tty: true

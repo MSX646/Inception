@@ -1,6 +1,6 @@
-from alpine:3.16
-arg PHP_VERSION=8 DB_NAME DB_USER DB_PASS DOMAIN ADMIN ADMIN_MAIL USER_MAIL
-run apk update && apk upgrade && apk add \
+FROM alpine:3.16
+ARG PHP_VERSION=8
+RUN apk update && apk upgrade && apk add \
     php${PHP_VERSION} \
     php${PHP_VERSION}-fpm \
     php${PHP_VERSION}-mysqli \
@@ -23,13 +23,7 @@ run apk update && apk upgrade && apk add \
       /etc/php8/php-fpm.d/www.conf && \
     rm -f /var/cache/apk/*
 workdir /var/www
-run wget https://wordpress.org/latest.zip && \
-    unzip latest.zip && \
-    cp -rf wordpress/* . && \
-    rm -rf wordpress latest.zip
-run wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
-copy ./tools/start.sh .
-copy ./conf/wp-config.php .
-run    chmod -R 0777 wp-content/ && chmod +x start.sh
-cmd ./start.sh
-#CMD ["/usr/sbin/php-fpm8", "-F"]
+run wget https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1.php && \
+    mv adminer-4.8.1.php index.php && chown -R root:root /var/www/
+expose 4242
+cmd [ "php", "-S", "[::]:4242", "-t", "/var/www" ]

@@ -78,3 +78,16 @@ services:
     restart: always
     stdin_open: true 
     tty: true
+  sftp:
+    build: ./requirements/sftp
+    container_name: sftp
+    env_file: .env
+    ports:
+      - "2121:22"
+    networks:
+     - app
+    volumes:
+      - wp:/wp-data/${DB_USER}/upload
+    restart: always
+    stdin_open: true 
+    tty: true

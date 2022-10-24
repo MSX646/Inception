@@ -68,3 +68,13 @@ services:
     restart: always
     stdin_open: true 
     tty: true
+  web:
+    build: ./requirements/web
+    container_name: web
+    ports:
+      - "80:80"
+    networks:
+     - app
+    restart: always
+    stdin_open: true 
+    tty: true

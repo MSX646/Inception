@@ -15,6 +15,6 @@ fclean:
 	@docker system prune --all --force --volumes
 	@docker volume prune --force
 
-re: fclean build
+re: fclean all
 
 .PHONY	: all build down re clean fclean

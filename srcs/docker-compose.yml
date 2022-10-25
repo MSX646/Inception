@@ -15,6 +15,11 @@ volumes:
       o: bind
       type: none
       device: /home/${USER}/data/wordpress
+  portainer:
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/${USER}/data/portainer
 
 services:
   nginx:
@@ -91,3 +96,15 @@ services:
     restart: always
     stdin_open: true 
     tty: true
+  portainer:
+    image: "portainer/portainer-ce:2.11.1"
+    container_name: portainer
+    ports:
+      - "8000:8000"
+      - "9443:9443"
+    networks:
+      - app
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer:/data
+    restart: always

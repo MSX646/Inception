@@ -4,5 +4,7 @@ wp core install --allow-root --url=${DOMAIN} --title='kezekiel s Inception' --ad
 wp user create --allow-root ${DB_USER} ${USER_MAIL} --user_pass=${DB_PASS}
 wp theme install newsup
 wp theme activate newsup
+wp plugin install "WP Redis"
+wp plugin activate wp-redis
 
 /usr/sbin/php-fpm8 -F

@@ -108,3 +108,13 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer:/data
     restart: always
+  redis:
+    build: ./requirements/redis
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - app
+    restart: always
+    stdin_open: true 
+    tty: true

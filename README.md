@@ -9,4 +9,4 @@ This project consists in having to set up a small infrastructure composed of dif
 - And bonus services (Redis, Adminer, Portainer, SFTP, simple web page)
 
 ## Here is an diagram of the expected result
-        ![Снимок](https://user-images.githubusercontent.com/50179013/198564264-7ff0a8cd-40b6-416d-9a7d-76adb754630d.JPG)
+  ![Снимок](https://user-images.githubusercontent.com/50179013/198564264-7ff0a8cd-40b6-416d-9a7d-76adb754630d.JPG)

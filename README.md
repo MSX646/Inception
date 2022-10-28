@@ -5,7 +5,7 @@ This project consists in having to set up a small infrastructure composed of dif
 - A Docker container that contains MariaDB
 - A volume that contains WordPress database
 - A second volume that contains WordPress website files
-- A docker-network that establishes the connection between your containers
+- A docker-network that establishes the connection between containers
 - And bonus services (Redis, Adminer, Portainer, SFTP, simple web page)
 
 ## Here is an diagram of the expected result
